@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'plugin:@typescript-eslint/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     overrides: [],
     parser: '@typescript-eslint/parser',
@@ -19,6 +20,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'react-hooks',
+        'i18next',
     ],
     rules: {
         indent: [2, 4],
@@ -54,6 +56,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'off',
         'no-plusplus': 'off',
         'object-curly-newline': 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
     globals: {
         __IS_DEV__: true,
