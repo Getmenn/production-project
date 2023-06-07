@@ -4,5 +4,8 @@
   "Язык": "Русский",
   "Главная": "Главная",
   "o-saite": "О сайте",
-  "stranica-ne-naidena": "Страница не найдена"
+  "stranica-ne-naidena": "Страница не найдена",
+  "proizoshla-nepredvidennaya-oshibka": "Произошла непредвиденная ошибка",
+  "obnovit-stranicu": "Обновить страницу",
+  "throw-error": "Вызвать ошибку"
 }
