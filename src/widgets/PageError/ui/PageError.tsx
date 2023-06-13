@@ -18,9 +18,9 @@ export const PageError = (props: IProps) => {
 
     return (
         <div className={classNames(s.pageError, {}, [className])}>
-            <p>{t('proizoshla-nepredvidennaya-oshibka')}</p>
+            <p>{t('Произошла непредвиденная ошибка')}</p>
             <Button onClick={reloadPage}>
-                {t('obnovit-stranicu')}
+                {t('Обновить страницу')}
             </Button>
         </div>
     );

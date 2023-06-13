@@ -5,7 +5,7 @@ export default function AboutPage() {
 
     return (
         <>
-            <h1>{t('o-saite')}</h1>
+            <h1>{t('О сайте')}</h1>
         </>
     );
 }

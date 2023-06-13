@@ -3,9 +3,9 @@
   "Перевод": "Translate",
   "Язык": "English",
   "Главная": "Main",
-  "o-saite": "About us",
-  "stranica-ne-naidena": "Page not found",
-  "proizoshla-nepredvidennaya-oshibka": "An unexpected error has occurred",
-  "obnovit-stranicu": "Reload page",
-  "throw-error": "throw error"
+  "О сайте": "About us",
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Reload page",
+  "Вызвать ошибку": "throw error"
 }
