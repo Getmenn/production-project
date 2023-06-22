@@ -20,7 +20,6 @@
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
-
   },
   "keywords": [],
   "author": "",
@@ -60,6 +59,7 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.12",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.1",
