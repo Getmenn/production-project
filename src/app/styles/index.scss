@@ -3,17 +3,13 @@
 @import "themes/dark";
 @import "reset";
 
-body{
-    background: var(--bg-color);
+body {
     font-size: var(--font-m);
     color: var(--primary-color);
 }
 
 .app{
     background: var(--bg-color);
-
-    // font-size: var(--font-m);
-    color: var(--primary-color);
     min-height: 100vh;
 }
 
