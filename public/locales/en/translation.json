@@ -10,5 +10,7 @@
   "Вызвать ошибку": "throw error",
   "Переключатель": "Toggle",
   "Короткий язык": "En",
-  "Войти": "Login"
+  "Войти": "Login",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }
