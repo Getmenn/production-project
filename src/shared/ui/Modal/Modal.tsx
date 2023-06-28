@@ -27,10 +27,10 @@ export const Modal = (props: IProps) => {
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     useEffect(() => {
-        if(isOpen){
+        if (isOpen) {
             setIsMounted(true);
         }
-    },[isOpen])
+    }, [isOpen]);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -68,7 +68,7 @@ export const Modal = (props: IProps) => {
         [s.isClosing]: isClosing,
     };
 
-    if(lazy && !isMounted){
+    if (lazy && !isMounted) {
         return null;
     }
 

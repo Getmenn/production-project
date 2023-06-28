@@ -12,6 +12,6 @@ type Story = StoryObj<InputProps>;
 export const Primary: Story = {
     args: {
         placeholder: 'Type text',
-        value: '123'
+        value: '123',
     },
 };

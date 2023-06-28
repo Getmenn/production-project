@@ -1,7 +1,6 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import s from "./Input.module.scss"
-import { InputHTMLAttributes, memo, useEffect, useRef } from "react";
-import { useState } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
+import s from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
@@ -16,8 +15,8 @@ export interface InputProps extends HTMLInputProps{
 export const Input = memo((props: InputProps) => {
     const {
         type = 'text',
-        className, 
-        value, 
+        className,
+        value,
         onChange,
         placeholder,
         autofocus,
@@ -28,36 +27,37 @@ export const Input = memo((props: InputProps) => {
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
 
-    useEffect(()=> {
-        if(autofocus){
+    useEffect(() => {
+        if (autofocus) {
             setIsFocused(true);
-            ref.current?.focus()
+            ref.current?.focus();
         }
-    },[autofocus])
+    }, [autofocus]);
 
     const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
         setCaretPosition(e.target.value.length);
-    }
+    };
 
-    const onBlur = () => setIsFocused(false)
-    const onFocus = () => setIsFocused(true)
+    const onBlur = () => setIsFocused(false);
+    const onFocus = () => setIsFocused(true);
 
     const onSelect = (e: any) => {
-        setCaretPosition(e?.target?.selectionStart || 0)
-    }
+        setCaretPosition(e?.target?.selectionStart || 0);
+    };
 
     return (
         <div className={classNames(s.inputWrapper, {}, [className])}>
-            {placeholder &&
-                <div className={s.placeholder}>
-                    {`${placeholder}>`}
-                </div>
-            }
+            {placeholder
+                && (
+                    <div className={s.placeholder}>
+                        {`${placeholder}>`}
+                    </div>
+                )}
             <div className={s.caretWrapper}>
-                <input 
+                <input
                     type={type}
-                    value = {value}
+                    value={value}
                     onChange={onChangeHandler}
                     className={s.input}
                     onFocus={onFocus}
@@ -66,15 +66,16 @@ export const Input = memo((props: InputProps) => {
                     ref={ref}
                     {...otherProps}
                 />
-                {isFocused && 
-                    <span 
-                        className={s.caret}
-                        style={{left: `${caretPosition * 9}px`}} 
-                    />
-                }
+                {isFocused
+                    && (
+                        <span
+                            className={s.caret}
+                            style={{ left: `${caretPosition * 9}px` }}
+                        />
+                    )}
             </div>
-            
+
         </div>
-        
-    )
-})
+
+    );
+});

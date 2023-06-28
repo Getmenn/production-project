@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
-import s from './LoginForm.module.scss';
 import { Input } from 'shared/ui/Input/Input';
 import { useState } from 'react';
+import s from './LoginForm.module.scss';
 
 interface IProps{
     className?: string;
@@ -16,20 +16,20 @@ export const LoginForm = (props: IProps) => {
 
     const onChange = (val: string) => {
         setValue(val);
-    }
+    };
 
     return (
         <div
             className={classNames(s.loginForm, {}, [className])}
         >
-            <Input 
-                type="text" 
-                value={value} 
+            <Input
+                type="text"
+                value={value}
                 onChange={onChange}
                 placeholder={t('Введите username')}
                 autofocus
             />
-            <Input 
+            <Input
                 type="text"
                 placeholder={t('Введите пароль')}
             />
