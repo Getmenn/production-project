@@ -1,7 +1,8 @@
-import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
-import { BuildPaths } from '../types/config';
+import webpack, { RuleSetRule } from 'webpack';
+
 import { buildCssLoader } from '../loaders/buildCssLoader';
+import { BuildPaths } from '../types/config';
 
 export default ({ config } : {config: webpack.Configuration}) => { // сторибук работает и без этого
     const paths: BuildPaths = {

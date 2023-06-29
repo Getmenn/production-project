@@ -21,6 +21,7 @@ module.exports = {
         '@typescript-eslint',
         'react-hooks',
         'i18next',
+        'simple-import-sort',
     ],
     rules: {
         indent: [2, 4],
@@ -63,6 +64,10 @@ module.exports = {
             markupOnly: true,
             // ignoreAttribute: ['data-testid'],
         }],
+        'simple-import-sort/imports': 'error',
+        'simple-import-sort/exports': 'error',
+        'sort-imports': 'off', // отвечает за сортировку импортов в файлах React
+        'import/order': 'off',
     },
 
     globals: {

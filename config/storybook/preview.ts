@@ -1,12 +1,14 @@
+import '../../src/app/styles/index.scss';
+
+import { Story } from '@storybook/blocks';
 import type { Preview } from '@storybook/react';
 import React from 'react';
-import { Story } from '@storybook/blocks';
-import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { ThemeProvider } from '../../src/app/providers/ThemeProvider/ui/ThemeProvider';
-import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import '../../src/app/styles/index.scss';
+
 import { Theme } from '../../src/app/providers/ThemeProvider/lib/ThemeContext';
+import { ThemeProvider } from '../../src/app/providers/ThemeProvider/ui/ThemeProvider';
+import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 const preview: Preview = {
     parameters: {
