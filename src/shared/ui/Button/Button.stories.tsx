@@ -59,6 +59,14 @@ export const OutlinedSizeXL: Story = {
     },
 };
 
+export const Dicabled: Story = {
+    args: {
+        children: 'text',
+        theme: ButtonTheme.OUTLINE,
+        disabled: true,
+    },
+};
+
 // ============================= Dark
 
 export const PrimaryDark: Story = {
