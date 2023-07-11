@@ -1,8 +1,9 @@
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { Counter } from 'entities/Counter';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function MainPage() {
+const MainPage = memo(() => {
     const { t } = useTranslation('main');
 
     return (
@@ -12,4 +13,6 @@ export default function MainPage() {
             <Counter />
         </>
     );
-}
+});
+
+export default MainPage;
