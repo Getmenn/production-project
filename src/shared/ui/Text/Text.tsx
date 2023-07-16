@@ -2,6 +2,7 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import s from './Text.module.scss';
+import { DefaultTFuncReturn } from 'i18next';
 
 export enum TextTheme {
     PRIMARY = 'primary',
@@ -10,8 +11,8 @@ export enum TextTheme {
 
 interface IProps{
     className?: string;
-    title?: string;
-    text?: string;
+    title?: string | DefaultTFuncReturn;
+    text?: string | DefaultTFuncReturn;
     theme?: TextTheme;
 }
 

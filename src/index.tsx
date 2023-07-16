@@ -10,8 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { App } from './app/App';
 
 const domNode = document.getElementById('root');
-const root = createRoot(domNode);
-root.render(
+const root = domNode && createRoot(domNode);
+root?.render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 
+import { Light } from '../../../../widgets/SideBar/ui/SideBar/SideBar.stories';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 interface UseThemeResult{
@@ -12,10 +13,13 @@ export function useTheme(): UseThemeResult {
 
     const toggleTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
-    document.body.className = theme;
-    return { theme, toggleTheme };
+    // document.body.className = theme;
+    return {
+        theme: theme || Theme.LIGHT,
+        toggleTheme,
+    };
 }
