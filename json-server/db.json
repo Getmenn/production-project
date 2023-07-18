@@ -1,28 +1,48 @@
 {
-    "posts": [
-      { "id": "1", "title": "json-server", "author": "simple" },
-      { "id": "2", "title": "json-server 1", "author": "simple 1" },
-      { "id": "3", "title": "json-server 2", "author": "simple 1" },
-      { "id": "4", "title": "json-server 3", "author": "simple 1" }
-    ],
-    "comments": [
-      { "id": "1", "body": "some comment", "postId": 1 }
-    ],
-    "users": [
-        {
-            "id": "1",
-            "username": "admin",
-            "password": "123"
-        }
-    ],
-    "profile": { 
-      "first": "Артем",
-      "lastname": "Андрияускас",
-      "age": 23,
-      "currency": "RUB",
-      "country": "Russia",
-      "city": "Chelyabinsk",
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "simple"
+    },
+    {
+      "id": "2",
+      "title": "json-server 1",
+      "author": "simple 1"
+    },
+    {
+      "id": "3",
+      "title": "json-server 2",
+      "author": "simple 1"
+    },
+    {
+      "id": "4",
+      "title": "json-server 3",
+      "author": "simple 1"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
       "username": "admin",
-      "avatar": "https://sun9-80.userapi.com/impg/GqnFiVVgklsuwow5ywsKKfK98iJ7GCJv9g0nXg/mh_m-z7Lx7w.jpg?size=1170x1068&quality=95&sign=a0cd9efc9ce4bfb06cf4a68233e3a411&type=album"
-     }
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Артем",
+    "lastname": "Андрияускас",
+    "age": 23,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Челябинск",
+    "username": "admin",
+    "avatar": "https://sun9-80.userapi.com/impg/GqnFiVVgklsuwow5ywsKKfK98iJ7GCJv9g0nXg/mh_m-z7Lx7w.jpg?size=1170x1068&quality=95&sign=a0cd9efc9ce4bfb06cf4a68233e3a411&type=album"
   }
+}

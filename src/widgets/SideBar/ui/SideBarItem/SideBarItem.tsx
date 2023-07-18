@@ -13,6 +13,11 @@ interface IProps{
 
 export const SideBarItem = memo(({ item, collapsed }: IProps) => {
     const { t } = useTranslation();
+    // const isAuth = useSelector(getUserAuthData); !!! добавить User
+
+    // if (item.authOnly && !isAuth) {
+    //     return null;
+    // }
 
     return (
         <AppLink
