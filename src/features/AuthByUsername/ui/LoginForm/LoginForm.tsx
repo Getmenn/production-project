@@ -57,8 +57,13 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
             <div
                 className={classNames(s.loginForm, {}, [className])}
             >
-                <Text title="Форма авторизации" theme={TextTheme.PRIMARY} />
-                { error && <Text text={error} theme={TextTheme.ERROR} />}
+                <Text title={t<string>('Форма авторизации')} theme={TextTheme.PRIMARY} />
+                { error && (
+                    <Text
+                        text={t('Вы ввели неверный логин или пароль')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     type="text"
                     onChange={onChangeUsername}

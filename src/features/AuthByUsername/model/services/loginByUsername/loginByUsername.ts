@@ -3,6 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { ThunkExtraArg } from 'app/providers/StoreProvider/config/StateSchema';
 import axios from 'axios';
 import { User, userActions } from 'entities/User';
+import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 interface LoginByUsernameProps {
@@ -30,7 +31,7 @@ export const loginByUsername = createAsyncThunk<
             return response.data;
         } catch (error) {
             console.log(error);
-            return rejectWithValue('Не верный логин или пароль');
+            return rejectWithValue('error');
         }
     },
 );

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
-import { Text } from './Text';
+import { Text, TextTheme } from './Text';
 
 const meta = {
     title: 'shared/Text',
@@ -23,6 +23,7 @@ export const TitleProps: Story = {
     args: {
         title: 'Title Title Title',
         text: 'Description Description Description Description',
+        theme: TextTheme.ERROR,
     },
 };
 
