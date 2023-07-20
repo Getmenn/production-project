@@ -3,8 +3,8 @@ import { componentRender } from 'shared/lib/tests/componentRender/componentRende
 
 import { SideBar } from './SideBar';
 
-describe('SideBar', () => {
-    test('whith only first param', () => {
+describe('Sidebar', () => {
+    test('with only first param', () => {
         componentRender(<SideBar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });

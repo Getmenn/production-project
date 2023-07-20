@@ -25,6 +25,13 @@ export default ({ config } : {config: webpack.Configuration}) => { // стори
         });
     }
 
+    if (config!.resolve!.modules) {
+        config!.resolve!.modules = [
+            path.resolve(__dirname, '../../src'),
+            'node_modules',
+        ];
+    }
+
     config.module?.rules?.push({
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
@@ -35,6 +42,7 @@ export default ({ config } : {config: webpack.Configuration}) => { // стори
     config.plugins?.push(new DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook'),
     }));
 
     return config;

@@ -5,9 +5,9 @@ import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 import i18nForTests from 'shared/config/i18n/i18nForTests';
 
-export interface componentRenderOptions{
+export interface componentRenderOptions {
     route?: string;
-    initialState?: DeepPartial<StateSchema>
+    initialState?: DeepPartial<StateSchema>;
 }
 
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
@@ -18,9 +18,11 @@ export function componentRender(component: ReactNode, options: componentRenderOp
 
     return render(
         <MemoryRouter initialEntries={[route]}>
-            <I18nextProvider i18n={i18nForTests}>
-                {component}
-            </I18nextProvider>
+            <StoreProvider initialState={initialState as StateSchema}>
+                <I18nextProvider i18n={i18nForTests}>
+                    {component}
+                </I18nextProvider>
+            </StoreProvider>
         </MemoryRouter>,
     );
 }
