@@ -1,6 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
+
 import { getProfileForm } from './getProfileForm';
 
 describe('getProfileForm.test', () => {
@@ -8,7 +9,7 @@ describe('getProfileForm.test', () => {
         const data = {
             username: 'admin',
             age: 22,
-            country: Country.Ukraine,
+            country: Country.Armenia,
             lastname: 'ulbi tv',
             first: 'asd',
             city: 'asf',
