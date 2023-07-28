@@ -8,9 +8,9 @@ const MainPage = memo(() => {
 
     return (
         <>
-            <h1>{t('Главная страница')}</h1>
-            <BugButton />
-            <Counter />
+            <h1 style={{ color: 'red' }}>{t('Главная страница')}</h1>
+            {/* <BugButton /> */}
+            {/* <Counter /> */}
         </>
     );
 });
