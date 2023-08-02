@@ -5,7 +5,7 @@ import s from './Avatar.module.scss';
 
 interface IProps{
     className?: string;
-    src: string;
+    src?: string;
     size?: number;
     alt?: string;
 }

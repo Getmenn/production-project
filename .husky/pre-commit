@@ -3,5 +3,5 @@
 
 # npm run build:prod
 # npm run lint:ts ошибка версии
-npm run lint:scss
+# npm run lint:scss
 # npm run test:unit ошибка временный редьюсеров

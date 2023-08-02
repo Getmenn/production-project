@@ -12,9 +12,7 @@ const ArticlesPage = ({ className }: IProps) => {
     const { t } = useTranslation('articles');
 
     return (
-        <div className={classNames(s.articlesPage, {}, [className])}>
-            Articles page
-        </div>
+        <div className={classNames(s.articlesPage, {}, [className])} />
     );
 };
 
