@@ -15,6 +15,17 @@ interface IProps{
 export const CommentList = ({ className, comments, isLoading }: IProps) => {
     const { t } = useTranslation();
 
+    if (isLoading) {
+        return (
+            <div className={classNames(s.commentList, {}, [className])}>
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+                <CommentCard isLoading />
+
+            </div>
+        );
+    }
+
     return (
         <div className={classNames(s.commentList, {}, [className])}>
             {comments?.length

@@ -1,4 +1,5 @@
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -18,6 +19,9 @@ export const ProfilePageHeader = ({ className }: IProps) => {
 
     const readonly = useSelector(getProfileReadonly);
     const dispatch = useAppDispatch();
+    const authData = useSelector(getUserAuthData);
+    const profileData = useSelector(getProfileData);
+    const canEdit = authData?.id === profileData?.id;
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false));
@@ -34,35 +38,40 @@ export const ProfilePageHeader = ({ className }: IProps) => {
     return (
         <div className={classNames(s.profilePageHeader, {}, [className])}>
             <Text title={t('Профиль')} />
-            {readonly
-                ? (
-                    <Button
-                        theme={ButtonTheme.OUTLINE}
-                        className={s.editBtn}
-                        onClick={onEdit}
-                    >
-                        {t('Редактировать')}
-                    </Button>
-                )
-                : (
-                    <>
-                        <Button
-                            theme={ButtonTheme.OUTLINE_RED}
-                            className={s.editBtn}
-                            onClick={onCancelEdit}
-                        >
-                            {t('Отменить')}
-                        </Button>
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            className={s.saveBtn}
-                            onClick={onSave}
-                        >
-                            {t('Сохранить')}
-                        </Button>
-                    </>
+            {canEdit && (
+                <div className={s.btnWrapper}>
+                    {readonly
+                        ? (
+                            <Button
+                                theme={ButtonTheme.OUTLINE}
+                                className={s.editBtn}
+                                onClick={onEdit}
+                            >
+                                {t('Редактировать')}
+                            </Button>
+                        )
+                        : (
+                            <>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE_RED}
+                                    className={s.editBtn}
+                                    onClick={onCancelEdit}
+                                >
+                                    {t('Отменить')}
+                                </Button>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE}
+                                    className={s.saveBtn}
+                                    onClick={onSave}
+                                >
+                                    {t('Сохранить')}
+                                </Button>
+                            </>
+                        )}
 
-                )}
+                </div>
+            )}
+
         </div>
     );
 };
