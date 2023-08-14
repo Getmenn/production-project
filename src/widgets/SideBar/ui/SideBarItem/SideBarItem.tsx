@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 
-import { SideBarItemType } from '../../model/item';
+import { SideBarItemType } from '../../model/types/sidebar';
 import s from './SideBarItem.module.scss';
 
 interface IProps{
