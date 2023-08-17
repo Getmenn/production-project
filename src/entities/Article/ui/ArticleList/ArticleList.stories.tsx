@@ -1,19 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
-import { Article, ArticleBlockType, ArticleType } from '../../model/types/article';
-import { ArticleDetails } from './ArticleDetails';
+import { Article, ArticleBlockType, ArticleType, ArticleView } from '../../model/types/article';
+import { ArticleList } from './ArticleList';
 
 const meta = {
-    title: 'entities/Article/ArticleDetails',
-    component: ArticleDetails,
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
     args: {
 
     },
-} satisfies Meta<typeof ArticleDetails>;
-
-export default meta;
-type Story = StoryObj<typeof ArticleDetails>;
+} satisfies Meta<typeof ArticleList>;
 
 const article: Article = {
     id: '1',
@@ -89,23 +85,47 @@ const article: Article = {
     ],
 };
 
-export const Primary: Story = {};
-Primary.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+export default meta;
+type Story = StoryObj<typeof ArticleList>;
 
-export const Loading: Story = {};
-Loading.decorators = [StoreDecorator({
-    articleDetails: {
+export const LoadingBig: Story = {
+    args: {
         isLoading: true,
+        articles: [],
+        view: ArticleView.BIG,
     },
-})];
+};
 
-export const Error: Story = {};
-Error.decorators = [StoreDecorator({
-    articleDetails: {
-        error: 'error',
+export const LoadingSmall: Story = {
+    args: {
+        isLoading: true,
+        articles: [],
+        view: ArticleView.SMALL,
     },
-})];
+};
+
+export const ListSmall: Story = {
+    args: {
+        articles: new Array(9)
+            .fill(0)
+            .map((item, index) => ({
+                ...article,
+                id: String(index),
+            })),
+        isLoading: false,
+        view: ArticleView.SMALL,
+    },
+};
+
+export const ListBig: Story = {
+    args: {
+        articles: new Array(9)
+            .fill(0)
+            .map((item, index) => ({
+                ...article,
+                id: String(index),
+            })),
+        isLoading: false,
+        view: ArticleView.BIG,
+    },
+};
