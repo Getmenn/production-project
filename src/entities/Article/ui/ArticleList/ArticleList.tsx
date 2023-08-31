@@ -31,14 +31,6 @@ export const ArticleList = ({
 }: IProps) => {
     const { t } = useTranslation();
 
-    if (isLoading) {
-        return (
-            <div className={classNames(s.articleList, {}, [className, s[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     const renderArticle = (article: Article) => (
         <ArticleListItem
             article={article}
@@ -53,6 +45,7 @@ export const ArticleList = ({
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 };

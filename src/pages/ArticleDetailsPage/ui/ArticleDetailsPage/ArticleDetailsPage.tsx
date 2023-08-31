@@ -17,6 +17,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer, getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import s from './ArticleDetailsPage.module.scss';
+import { Page } from 'shared/ui/Page/Page';
 
 interface IProps{
     className?: string;
@@ -56,7 +57,7 @@ const ArticleDetailsPage = ({ className }: IProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(s.articleDetailsPage, {}, [className])}>
+            <Page className={classNames(s.articleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList}>
                     {t('Назад к списку')}
                 </Button>
@@ -67,7 +68,7 @@ const ArticleDetailsPage = ({ className }: IProps) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

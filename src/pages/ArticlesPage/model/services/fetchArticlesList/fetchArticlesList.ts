@@ -3,22 +3,33 @@ import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article, getArticleDetailsData } from 'entities/Article';
 import { Comment } from 'entities/Comment';
 import { getUserAuthData } from 'entities/User';
+
+import { getArticlesPageLimit } from '../../selectors/articlesPageSelectors';
 // import { getAddCommentFormText } from 'features/addCommentForm/model/selectors/addCommentFormSelectors';
 // import { addCommentFormActions } from 'features/addCommentForm/model/slice/addCommentFormSlice';
 
+interface FetchArticlesListProps {
+    page?: number;
+}
+
 export const fetchArticlesList = createAsyncThunk<
     Article[],
-    void,
+    FetchArticlesListProps,
     ThunkConfig<string>
 >(
     'articlesPage/fetchArticlesList',
-    async (text, thunkApi) => {
-        const { extra, rejectWithValue } = thunkApi;
+    async (props, thunkApi) => {
+        const { extra, rejectWithValue, getState } = thunkApi;
+
+        const { page = 1 } = props;
+        const limit = getArticlesPageLimit(getState());
 
         try {
             const response = await extra.api.get<Article[]>('/articles', {
                 params: {
                     _expand: 'user',
+                    _limit: limit,
+                    _page: page,
                 },
             });
 
