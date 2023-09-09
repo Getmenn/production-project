@@ -34,6 +34,7 @@ export const CommentList = ({ className, comments, isLoading }: IProps) => {
                         isLoading={isLoading}
                         className={s.comment}
                         comment={comment}
+                        key={comment.id}
                     />
                 ))
                 : <Text text={t('Комментарии отсутствуют')} />}

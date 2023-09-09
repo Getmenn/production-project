@@ -34,10 +34,11 @@ export const ArticleViewSelector = ({ className, view, onViewClick }: IProps) =>
 
     return (
         <div className={classNames(s.ArticleViewSelector, {}, [className])}>
-            {viewTypes.map((viewType) => (
+            {viewTypes.map((viewType, index) => (
                 <Button
                     theme={ButtonTheme.CLEAR}
                     onClick={onClick(viewType.view)}
+                    key={index}
                 >
                     <Icon
                         Svg={viewType.icon}

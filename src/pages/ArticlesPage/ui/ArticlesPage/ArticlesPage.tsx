@@ -12,12 +12,10 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { Page } from 'shared/ui/Page/Page';
 
 import {
-    getArticlesPageError,
-    getArticlesPageHasMore,
     getArticlesPageIsLoading,
-    getArticlesPageNum,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import s from './ArticlesPage.module.scss';
 
@@ -40,19 +38,16 @@ const ArticlesPage = ({ className }: IProps) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
-    const onLoadNextPart = useCallback(() => {
+    const onLoadNextPart = () => {
         dispatch(fetchNextArticlesPage());
-    }, [dispatch]);
+    };
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
+        dispatch(initArticlesPage());
     });
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
                 onScrollEnd={onLoadNextPart}
                 className={classNames(s.articlesPage, {}, [className])}
