@@ -9,10 +9,12 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { NavigateOptions, To } from 'react-router-dom';
+import { UISchema } from 'widgets/Page';
 
 export interface StateSchema{
     counter: CounterSchema;
     user: UserSchema;
+    ui: UISchema;
 
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
