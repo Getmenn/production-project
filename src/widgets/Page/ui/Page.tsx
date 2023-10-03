@@ -42,8 +42,6 @@ export const Page = memo(({
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        console.log('scroll');
-
         dispatch(uiActions.setScrollPosition({
             position: e.currentTarget.scrollTop,
             path: pathname,

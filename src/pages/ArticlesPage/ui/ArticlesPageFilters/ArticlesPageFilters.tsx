@@ -50,14 +50,14 @@ export const ArticlesPageFilters = ({ className }: IProps) => {
     const onChangeSort = useCallback((newSort: ArticleSortField) => {
         dispatch(articlesPageActions.setSort(newSort));
         dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     const onChangeOrder = useCallback((newOrder: SortOrder) => {
         dispatch(articlesPageActions.setOrder(newOrder));
         dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     const onChangeSearch = useCallback((search: string) => {
         dispatch(articlesPageActions.setSearch(search));
@@ -68,8 +68,8 @@ export const ArticlesPageFilters = ({ className }: IProps) => {
     const onChangeType = useCallback((value: ArticleType) => {
         dispatch(articlesPageActions.setType(value));
         dispatch(articlesPageActions.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+        fetchData();
+    }, [dispatch, fetchData]);
 
     return (
         <div className={classNames(s.articlesPageFilters, {}, [className])}>

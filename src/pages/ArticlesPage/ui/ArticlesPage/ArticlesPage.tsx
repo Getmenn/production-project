@@ -36,6 +36,8 @@ const ArticlesPage = ({ className }: IProps) => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = () => {
+        console.log('onLoadNextPart');
+
         dispatch(fetchNextArticlesPage());
     };
 
