@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 
 import { Article, ArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -29,16 +30,23 @@ export const ArticleList = ({
     view = ArticleView.SMALL,
     isLoading,
 }: IProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('articles');
 
     const renderArticle = (article: Article) => (
         <ArticleListItem
             article={article}
             view={view}
-            className={s.card}
             key={article.id}
         />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(s.articleList, {}, [className, s[view]])}>
+                <Text size={TextSize.L} title={t('Статьи не найдены')} />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(s.articleList, {}, [className, s[view]])}>
