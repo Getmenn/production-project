@@ -51,7 +51,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'max-len': ['warn', {
             ignoreComments: true,
-            code: 120,
+            code: 125,
         }],
         'consistent-return': 'off',
         'react/jsx-no-useless-fragment': 'off',
@@ -62,12 +62,13 @@ module.exports = {
         'object-curly-newline': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            // ignoreAttribute: ['data-testid'],
+            ignoreAttribute: ['data-testid', 'to', 'target'],
         }],
         'simple-import-sort/imports': 'error',
         'simple-import-sort/exports': 'error',
         'sort-imports': 'off', // отвечает за сортировку импортов в файлах React
         'import/order': 'off',
+        'arrow-body-style': 'off',
     },
 
     globals: {

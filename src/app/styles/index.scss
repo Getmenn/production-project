@@ -19,3 +19,16 @@ body {
     display: flex;
 }
 
+*::-webkit-scrollbar {
+    width: 9px;               /* ширина всей полосы прокрутки */
+    height: 9px;
+}
+  
+*::-webkit-scrollbar-track {
+    background: var(--card-bg);        /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);    /* цвет бегунка */
+}
+
